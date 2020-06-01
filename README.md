@@ -1,7 +1,12 @@
 # AVC-Project_ENGR101
-Christian, Daniel, Lee, Kevin
 
-Testing...TYPE IN UR NAME AND "YES" IF YOU ALL HAVE ACCESS TO THIS REPOSITORY!
-Daniel: Yes
-Christian: Yes
-Lee: Yes
+
+AVC Plan
+Team Name: 
+Team Members & contact info: Christian, Daniel, Lee, Kevin
+X
+X
+X
+X
+Communication tool: Facebook Messenger
+ 
