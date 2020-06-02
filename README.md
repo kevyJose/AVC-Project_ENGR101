@@ -2,8 +2,8 @@
 
 
 AVC Plan
-Team Name: 
-Team Members & contact info: Christian, Daniel, Lee, Kevin
+Team Name: KDLC Boys
+Team Members & contact info: Kevin, Daniel, Lee, Christian
 X
 X
 X
