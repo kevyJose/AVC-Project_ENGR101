@@ -27,7 +27,7 @@ Software Developer (writing core code and extending functionality, testing and d
 
 Week Ending 5<sup>th</sup> June 2020
 
-Goal for this week: **Start the project.**  
+Objective for this week: **Start the project.**  
 Tasks required to complete this:
 1. - [x] Make contact with the team.
 2. - [ ] Ensure everyone's installations are corrrect.
@@ -35,5 +35,8 @@ Tasks required to complete this:
        - [ ] Ensure SFML is installed for everyone.
        - [ ] Test all installations work and everyone's machines can run server3.cpp and robot.cpp correctly.
 3. - [ ] Complete plan and goals for team to adhere by through project.
-4. - [ ] Assign roles and tasks to team members.
+4. - [ ] Assign roles and tasks for team members to complete.  
 
+Challenges / conflicts of this week:  
+    - SFML issues causing problems with getting ready for project  
+    
