@@ -8,7 +8,7 @@ Team Members & contact info:
 Kevin Jose (josekevi@myvuw.ac.nz)
 Daniel Cross (add email)
 Lee Scanlon (add email)
-Christian Struwig (add email)
+Christian Struwig (struwichri@myvuw.ac.nz)
 
 Communication tool: Facebook Messenger
 
