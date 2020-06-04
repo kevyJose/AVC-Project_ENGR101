@@ -35,7 +35,7 @@ Tasks to complete this:
        - [ ] Ensure SFML is installed for everyone.
        - [ ] Test all installations work and everyone's machines can run server3.cpp and robot.cpp correctly.
 3. - [ ] Complete plan and goals for team to adhere by through project.
-4. - [ ] Assign roles and tasks for team members to complete.  
+4. - [x] Assign roles and tasks for team members to complete.  
 5. - [ ] Begin individual time management logs.  
 
 Challenges / conflicts of this week:  
