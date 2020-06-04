@@ -80,5 +80,5 @@ Challenges / conflicts of this week:
     - ENGR121 test and COMP102/112 assignments to complete as well - will be a big draw of time from team members that will impact on time working on AVC project.  
 
 Due this week:  
-    - Code of project (All of core, completion and challenge) to be submitted on 19<sup>th</th> June.  
+    - Code of project (All of core, completion and challenge) to be submitted on 19<sup>th</sup> June.  
 
