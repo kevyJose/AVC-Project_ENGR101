@@ -4,18 +4,18 @@ AVC Plan
 
 Team Name: KDLC Boys
 
-Team Members & contact info:
-Kevin Jose (josekevi@myvuw.ac.nz)
-Daniel Cross (crossdani@myvuw.ac.nz)
-Lee Scanlon (add email)
-Christian Struwig (struwichri@myvuw.ac.nz)
+Team Members & contact info:  
+Kevin Jose (josekevi@myvuw.ac.nz)  
+Daniel Cross (crossdani@myvuw.ac.nz)  
+Lee Scanlon (add email)  
+Christian Struwig (struwichri@myvuw.ac.nz)  
 
 Communication tool: Facebook Messenger
 
 Roles:\
-Project Manager/Developer - Kevin\
-Software Developer - Daniel\
-Software Developer - Lee\
+Project Manager/Developer - Kevin  
+Software Developer - Daniel  
+Software Developer - Lee  
 Software Developer - Christian
 
 Role Descriptions:
@@ -27,7 +27,7 @@ Software Developer (writing core code and extending functionality, testing and d
 
 Week Ending 5<sup>th</sup> June 2020
 
-Goal for this week: **Start the project.**\
+Goal for this week: **Start the project.**  
 Tasks required to complete this:
 1. - [x] Make contact with the team.
 2. - [ ] Ensure everyone's installations are corrrect.
