@@ -52,8 +52,8 @@ Tasks to complete this:
 2. - [ ] Write the code to allow robot to complete completition difficulty maze.    
 3. - [ ] TESTING: Check code completes maze consistently within given time - debug and fix to ensure this occurs.    
 4. - [ ] Ensure everyone is contributing as expected, following the plan and keeping contact/guiding team to keep within schedule.    
-5. - [ ] Maintain GitHub repository 
-       - Including updating plan/README, updating Wiki and maintaining files.    
+5. - [ ] Maintain GitHub repository   
+         - Including updating plan/README, updating Wiki and maintaining files.    
        
 Challenges / conflicts of this week:  
     - Assignments for COMP102/112 , ENGR121 and CYBR171 may reduce time commited to AVC project, possibly impeding progress.    
