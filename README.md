@@ -6,7 +6,7 @@ Team Name: KDLC Boys
 
 Team Members & contact info:
 Kevin Jose (josekevi@myvuw.ac.nz)
-Daniel Cross (add email)
+Daniel Cross (crossdani@myvuw.ac.nz)
 Lee Scanlon (add email)
 Christian Struwig (struwichri@myvuw.ac.nz)
 
@@ -21,7 +21,7 @@ Software Developer - Christian
 Role Descriptions:
 Project Manager (organising team meetings, reporting regularly on progress)
 
-Software Developer (writing core code and extending functionality, testing and documentation, debugging and committing to git, writing test cases and documenting performance against milestones
+Software Developer (writing core code and extending functionality, testing and documentation, debugging and committing to git, writing test cases and documenting performance against milestones)
 
 
  
