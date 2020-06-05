@@ -10,7 +10,7 @@ Daniel Cross (crossdani@myvuw.ac.nz)
 Lee Scanlon (add email)  
 Christian Struwig (struwichri@myvuw.ac.nz)  
 
-Communication tool: Facebook Messenger
+Communication tool: Facebook Messenger, Zoom  
 
 Roles:\
 Project Manager/Developer - Kevin  
