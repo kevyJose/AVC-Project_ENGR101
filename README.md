@@ -39,10 +39,15 @@ Tasks to complete this:
 5. - [x] Oragnise team meetings (to be continued throughout project) for extra discussion of project direction, issues or any other point to be raised regarding progress.    
 6. - [x] Begin individual time management logs.  
 
-Challenges / conflicts of this week:  
-    - SFML issues causing problems with getting ready for project.
+Challenges / conflicts of this week:
+- SFML issues causing problems with getting ready for project.
+- Lee facing issues with his setup/installation; waiting on him to FINISH.
+
+
+    - SFML issues causing problems with getting ready for project.    
+    - Lee facing issues with his setup/installation; waiting on him to FINISH. 
     
-    - Lee facing issues with his setup/installation; waiting on him to FINISH.  
+
     
 Due this week:   
     - AVC project plan.    
