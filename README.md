@@ -31,13 +31,13 @@ Objective for this week: **Start the project**
 Tasks to complete this:
 1. - [x] Make contact with the team. 
 2. - [ ] Ensure everyone's installations are corrrect.
-       - [ ] Check to make sure everyone will have capability to work on project.
-       - [ ] Ensure SFML is installed for everyone.
+       - [x] Check to make sure everyone will have capability to work on project.
+       - [x] Ensure SFML is installed for everyone.
        - [ ] Test all installations work and everyone's machines can run server3.cpp and robot.cpp correctly.
 3. - [ ] Complete plan and goals for team to adhere by through project.
 4. - [x] Assign roles and tasks for team members to complete.
-5. - [ ] Oragnise team meetings (to be continued throughout project) for extra discussion of project direction, issues or any other point to be raised regarding progress.    
-6. - [ ] Begin individual time management logs.  
+5. - [x] Oragnise team meetings (to be continued throughout project) for extra discussion of project direction, issues or any other point to be raised regarding progress.    
+6. - [x] Begin individual time management logs.  
 
 Challenges / conflicts of this week:  
     - SFML issues causing problems with getting ready for project.    
