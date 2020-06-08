@@ -34,7 +34,7 @@ Tasks to complete this:
        - [x] Check to make sure everyone will have capability to work on project.
        - [x] Ensure SFML is installed for everyone.
        - [ ] Test all installations work and everyone's machines can run server3.cpp and robot.cpp correctly.
-3. - [ ] Complete plan and goals for team to adhere by through project.
+3. - [x] Complete plan and goals for team to adhere by through project.
 4. - [x] Assign roles and tasks for team members to complete.
 5. - [x] Oragnise team meetings (to be continued throughout project) for extra discussion of project direction, issues or any other point to be raised regarding progress.    
 6. - [x] Begin individual time management logs.  
