@@ -42,10 +42,6 @@ Tasks to complete this:
 Challenges / conflicts of this week:
 - SFML issues causing problems with getting ready for project.
 - Lee facing issues with his setup/installation; waiting on him to FINISH.
-
-
-    - SFML issues causing problems with getting ready for project.    
-    - Lee facing issues with his setup/installation; waiting on him to FINISH. 
     
 
     
