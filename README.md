@@ -40,7 +40,8 @@ Tasks to complete this:
 6. - [x] Begin individual time management logs.  
 
 Challenges / conflicts of this week:  
-    - SFML issues causing problems with getting ready for project.    
+    - SFML issues causing problems with getting ready for project.
+    - Lee facing issues with his setup/installation; waiting on him to FINISH.
     
 Due this week:   
     - AVC project plan.    
