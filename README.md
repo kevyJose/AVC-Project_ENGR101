@@ -57,14 +57,37 @@ Tasks to complete this:
 3. - [ ] TESTING: Check code completes maze consistently within given time - debug and fix to ensure this occurs.    
 4. - [ ] Ensure everyone is contributing as expected, following the plan and keeping contact/guiding team to keep within schedule.    
 5. - [ ] Maintain GitHub repository   
-         - Including updating plan/README, updating Wiki and maintaining files.    
+         - Including updating plan/README, updating Wiki and maintaining files. 
+         
+
+**Core Code Tasks:**
+* Scanning for white pixels
+* Make sure the robot stays on the course of the white line, by maintaining the white line in center of camera frame
+* Function for changing direction in order to maintain white line in middle
+* When robot loses sight of the white line...reverse...find the course again
+
+*Possible Functions to be called per frame capture:  
+1.   *Kevin - Check if white line is present in frame (scan white pixels).  
+     >>Calculate the location of white pixels of the line  
+     >>Has a buffer (allows 250) for white line color if not exactly white (255,255,255).  
+2.   *Christian - Check if the white line is in the middle of the frame.  
+     >>Find the current position of the middle white pixel Calculate for the white line being in the middle of the frame.
+     >>Then make calculations to compare the middle pixel position to the centre of the array.     
+3.   *Daniel - Change the direction of robot (move a little left or right) if white pix. not in the middle of the frame.  
+     >>Adjust the speed of motors respectively.
+     >>maintain white line in centre of frame
+4.   *Lee - Reverse the robot if the line is not present until line is found again.  
+     >>Adjust the speed in a negative direction.  
+  
+                     //just add more or edit my functions if there are mistakes or some missing! :)
+
        
 Challenges / conflicts of this week:  
     - Assignments for COMP102/112 , ENGR121 and CYBR171 may reduce time commited to AVC project, possibly impeding progress.    
        
 Due this week:   
     - Project progress check (Wiki discussion etc)  
-    - Core code should be done (At the very least if completion or further work is possible) by the end of this week.   
+    - Core code should be done (At the very least...if completion or further work is possible) by the end of this week.   
                
 **- Week Ending 19<sup>th</sup> June 2020**  
 
