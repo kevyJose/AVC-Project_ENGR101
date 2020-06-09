@@ -83,7 +83,9 @@ Tasks to complete this:
 
        
 Challenges / conflicts of this week:  
-    - Assignments for COMP102/112 , ENGR121 and CYBR171 may reduce time commited to AVC project, possibly impeding progress.    
+    - Assignments for COMP102/112 , ENGR121 and CYBR171 may reduce time commited to AVC project, possibly impeding progress.
+    - Making the functions work together...smart collaboration/communication NEEDED!
+    
        
 Due this week:   
     - Project progress check (Wiki discussion etc)  
