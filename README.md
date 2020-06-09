@@ -23,6 +23,10 @@ Project Manager (organising team meetings, reporting regularly on progress)
 
 Software Developer (writing core code and extending functionality, testing and documentation, debugging and committing to git, writing test cases and documenting performance against milestones)
 
+* Core - following the line 
+* Completion - includes obstacles and dead-ends, 90-deg corners
+* Challenge - more of a maze structure...stay between the walls...corridor shape
+
 ### DATED PLAN AND MILESTONE GOALS
 
 **- Week Ending 5<sup>th</sup> June 2020**
@@ -43,10 +47,10 @@ Challenges / conflicts of this week:
 - SFML issues causing problems with getting ready for project.
 - Lee facing issues with his setup/installation; waiting on him to FINISH.
  
-
-    
+   
 Due this week:   
-    - AVC project plan.    
+    - AVC project plan.
+    
     
 **- Week Ending 12<sup>th</sup> June 2020**
 
