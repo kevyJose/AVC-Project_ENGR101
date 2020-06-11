@@ -35,6 +35,14 @@ int main(){
 		 // std::cout<<middle[i]<<" ";
 		  }
 	  double error = lineMiddle(middle);
+	    //this is the code that made it work
+		if (error > 0){
+			vLeft = 20+0.3*error;
+			vRight = 20-0.3*error;
+		} else {
+			vLeft = 20+0.3*error;
+			vRight = 20-0.3*error;
+			}
 	//  std::cout<<"Error: "<<error<<std::endl;
       setMotors(vLeft,vRight);   
   } //while
