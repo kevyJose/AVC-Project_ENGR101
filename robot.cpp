@@ -22,7 +22,7 @@ int main(){
 			int isWhite;			
 			
 			if (pix > 250){ isWhite = 1;				
-				error = error + i - 75;
+				error = error + i - 75;	//calculate error value based on position of WHITE line
 				num_White++;
 			} else{ isWhite = 0; }
 			//std::cout<<isWhite<<" ";
@@ -33,10 +33,13 @@ int main(){
 			std::cout<<isWhite<<" ";
 			
 		}
-		
+	    	//Adjust position to maintain line in middle of frame
+		//adjust left and right speeds, based on error
 		if (num_White > 0){
+			
 			vLeft = 20 - 0.3 * (error/num_White);
 			vRight = 20 + 0.3 * (error/num_White);
+		//no white line detected...reverse
 		} else { vLeft = -5; vRight = -5; }
 							
 		
