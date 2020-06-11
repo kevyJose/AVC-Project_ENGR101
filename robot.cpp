@@ -35,8 +35,7 @@ int main(){
 		}
 	    	//Adjust position to maintain line in middle of frame
 		//adjust left and right speeds, based on error
-		if (num_White > 0){
-			
+		if (num_White > 0){			
 			vLeft = 20 - 0.3 * (error/num_White);
 			vRight = 20 + 0.3 * (error/num_White);
 		//no white line detected...reverse
