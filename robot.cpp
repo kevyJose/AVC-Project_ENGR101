@@ -2,6 +2,9 @@
 #include "robot.hpp"
 
 bool run = true;
+int middle[150];
+double vLeft = 0.0;
+double vRight = 0.0;
 
 double lineMiddle(int values[], int blackPixelCount){ //calculates the middle of white line
 	int numwhites = 0;
@@ -30,16 +33,13 @@ double lineMiddle(int values[], int blackPixelCount){ //calculates the middle of
 
 };
 
-int middle[150];
-double vLeft = 0.0;
-double vRight = 0.0;
-int blackpixels = 0;
 
 double adjustMotors(double errorValue) { //Called for motor speed adjustment
 	//Positive calculated error val will cause bot to turn right, negative error val will cause bot to turn left
 	vLeft = 20 + (0.3 * errorValue);
 	vRight = 20 - (0.3 * errorValue);
 	setMotors(vLeft,vRight); 
+	return 0;
 }
 
 
@@ -49,6 +49,7 @@ int main(){
 	}
     vLeft = 20.0;
     vRight = 20.0;
+    int blackpixels = 0;
     SavePPMFile("i0.ppm",cameraView);
     while(run){
 	  takePicture();	
