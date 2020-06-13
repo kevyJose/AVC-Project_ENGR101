@@ -55,8 +55,8 @@ Due this week:
 
 Objective for this week: **Core and Completion Code.**  
 Tasks to complete this:  
-1. - [x] Write the code to allow robot to complete core difficulty maze.    
-2. - [x] Write the code to allow robot to complete completition difficulty maze.    
+1. - [x] Write the code to allow robot to complete CORE difficulty maze.    
+2. - [x] Write the code to allow robot to complete COMPLETION difficulty maze.    
 3. - [x] TESTING: Check code completes maze consistently within given time - debug and fix to ensure this occurs.    
 4. - [x] Ensure everyone is contributing as expected, following the plan and keeping contact/guiding team to keep within schedule.    
 5. - [x] Maintain GitHub repository   
@@ -76,9 +76,9 @@ Tasks to complete this:
      >>Adjust the speed in a negative direction.    
        
 Challenges / conflicts of this week:  
-    - Assignments for COMP102/112 , ENGR121 and CYBR171 may reduce time commited to AVC project, possibly impeding progress.
-    - Making the functions work together...smart collaboration/communication NEEDED!
-    - Kevin faced some issues when running/testing the program...but eventually sorted it out by end of week.    
+    // Assignments for COMP102/112 , ENGR121 and CYBR171 may reduce time commited to AVC project, possibly impeding progress. //
+       Making the functions work together...smart collaboration/communication NEEDED! //
+    // Kevin faced some issues when running/testing the program...but eventually sorted it out by end of week //   
        
 Due this week:   
     - Project progress check (Wiki discussion etc)  
