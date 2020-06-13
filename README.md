@@ -76,9 +76,9 @@ Tasks to complete this:
      >>Adjust the speed in a negative direction.    
        
 Challenges / conflicts of this week:  
-    // Assignments for COMP102/112 , ENGR121 and CYBR171 may reduce time commited to AVC project, possibly impeding progress. //
-       Making the functions work together...smart collaboration/communication NEEDED! //
-    // Kevin faced some issues when running/testing the program...but eventually sorted it out by end of week //   
+    - Assignments for COMP102/112 , ENGR121 and CYBR171 may reduce time commited to AVC project, possibly impeding progress.
+    - Making the functions work together...smart collaboration/communication NEEDED! 
+    - Kevin faced some issues when running/testing the program...but eventually sorted it out by end of week   
        
 Due this week:   
     - Project progress check (Wiki discussion etc)  
