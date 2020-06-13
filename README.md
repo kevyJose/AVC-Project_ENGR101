@@ -49,27 +49,19 @@ Challenges / conflicts of this week:
  
    
 Due this week:   
-    - AVC project plan.
-    
+    - AVC project plan.    
     
 **- Week Ending 12<sup>th</sup> June 2020**
 
 Objective for this week: **Core and Completion Code.**  
 Tasks to complete this:  
-1. - [ ] Write the code to allow robot to complete core difficulty maze.    
-2. - [ ] Write the code to allow robot to complete completition difficulty maze.    
-3. - [ ] TESTING: Check code completes maze consistently within given time - debug and fix to ensure this occurs.    
-4. - [ ] Ensure everyone is contributing as expected, following the plan and keeping contact/guiding team to keep within schedule.    
-5. - [ ] Maintain GitHub repository   
+1. - [x] Write the code to allow robot to complete core difficulty maze.    
+2. - [x] Write the code to allow robot to complete completition difficulty maze.    
+3. - [x] TESTING: Check code completes maze consistently within given time - debug and fix to ensure this occurs.    
+4. - [x] Ensure everyone is contributing as expected, following the plan and keeping contact/guiding team to keep within schedule.    
+5. - [x] Maintain GitHub repository   
          - Including updating plan/README, updating Wiki and maintaining files. 
          
-
-**Core Code Tasks:**
-* Scanning for white pixels
-* Make sure the robot stays on the course of the white line, by maintaining the white line in center of camera frame
-* Function for changing direction in order to maintain white line in middle
-* When robot loses sight of the white line...reverse...find the course again
-
 *Possible Functions to be called per frame capture:  
 1.   *Kevin - Check if white line is present in frame (scan white pixels).  
      >>Calculate the location of white pixels of the line  
@@ -81,20 +73,18 @@ Tasks to complete this:
      >>Adjust the speed of motors respectively.
      >>maintain white line in centre of frame
 4.   *Lee - Reverse the robot if the line is not present until line is found again.  
-     >>Adjust the speed in a negative direction.  
-  
-                     //just add more or edit my functions if there are mistakes or some missing! :)
-
+     >>Adjust the speed in a negative direction.    
        
 Challenges / conflicts of this week:  
     - Assignments for COMP102/112 , ENGR121 and CYBR171 may reduce time commited to AVC project, possibly impeding progress.
     - Making the functions work together...smart collaboration/communication NEEDED!
-    
+    - Kevin faced some issues when running/testing the program...but eventually sorted it out by end of week.    
        
 Due this week:   
     - Project progress check (Wiki discussion etc)  
     - Core code should be done (At the very least...if completion or further work is possible) by the end of this week.   
                
+
 **- Week Ending 19<sup>th</sup> June 2020**  
 
 Objective for this week: **Challenge Code - Coding part of project complete**  
