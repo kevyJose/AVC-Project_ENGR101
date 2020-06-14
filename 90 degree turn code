@@ -1,0 +1,11 @@
+void RightTurn90(){
+		vLeft = 248.0;
+		vRight = -88.0;
+		setMotors(vLeft, vRight);
+	}
+	
+void LeftTurn90(){
+		vLeft = -88.0;
+		vRight = 248.0;
+		setMotors(vLeft, vRight);
+	}
