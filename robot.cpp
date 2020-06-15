@@ -5,6 +5,11 @@ int middle[150];
 double vLeft = 0.0;
 double vRight = 0.0;
 
+//string corneringPath;		 
+int frontWhitePixelValue = 0;
+int leftWhitePixelValue = 0;
+int rightWhitePixelValue = 0;
+
 //USER INTERFACE - ASK USER FOR CORE/COMP OR CHALLENGE ROUTE
 //RUN THE SPECIFIED CODE
 //CORE/COMP FOLLOWS THE WHITE LINE
@@ -40,7 +45,8 @@ double lineMiddle(int values[], int blackPixelCount){ //calculates the middle of
 		double errors = whitelinelocation - camMiddle ; //calculates the how far of the line is from the middle
 		return errors; 
 	} else {
-		if (blackPixelCount > 5) { //If it detects the flag will do this in an attempt to not turn around - doesn't quite work for core, that still runs off 
+		std::cout<<blackPixelCount;
+		if (blackPixelCount > 5 && blackPixelCount < 130) { //If it detects the flag will do this in an attempt to not turn around - doesn't quite work for core, that still runs off 
 			run = false;
 			std::cout<<"Flag has been reached!"<<std::endl;
 			std::cout<<"Maze has been completed!"<<std::endl;
@@ -55,10 +61,18 @@ double lineMiddle(int values[], int blackPixelCount){ //calculates the middle of
 
 double adjustMotors(double errorValue) { //Called for motor speed adjustment
 	//Positive calculated error val will cause bot to turn right, negative error val will cause bot to turn left
-	std::cout<<errorValue;	
-	vLeft = 20 + (0.3 * errorValue);
-	vRight = 20 - (0.3 * errorValue);
-	setMotors(vLeft,vRight); 
+	//This if statement forces the bot to try the rightmost exit option when coming to an intersection
+	if (frontWhitePixelValue > 0 && leftWhitePixelValue > 0 && rightWhitePixelValue == 0) {
+		//std::cout<<"forced straightening occuring";
+		vLeft = 20;
+		vRight = 20;
+	} else {
+	
+		//std::cout<<errorValue;	
+		vLeft = 20 + (0.3 * errorValue);
+		vRight = 20 - (0.3 * errorValue);
+		setMotors(vLeft,vRight); 
+	}
 	return 0;
 }
 
@@ -71,7 +85,6 @@ int main(){
 	int userSelection = userInterface(); //Just a variable to store the selected option in
 	
 	
-	int blackpixels = 0;
 	SavePPMFile("i0.ppm",cameraView);
 	
 	//follow QUIT process
@@ -87,27 +100,51 @@ int main(){
 			}
 		else if(userSelection == 2){						
 			userSelection = userInterface();
+			if(userSelection == 3) {
+				setMotors(0,0);
+				return 0;
+			}
 			
-			}		
+			}					
 		}
+	
 	
 	while(run){
 		takePicture();	
 		double error;
 		
 		//Core/Completion section - runs only if user selects the 1st option
-		if(userSelection == 1) { 
-			for (int i =0; i<150;i++){
+		if(userSelection == 1) {
+			int frontRegionCheck;
+			int leftRegionCheck;
+			int rightRegionCheck;
+			frontWhitePixelValue = 0;
+			leftWhitePixelValue = 0;
+			rightWhitePixelValue = 0;
+			int blackpixels = 0;
+			
+			for (int i = 0; i<150;i++){
 				int pix = get_pixel(cameraView,90,i,3);
 				int isWhite;
 				if (pix >250){isWhite = 1;} else {isWhite = 0;}
 				middle[i] = isWhite;
-		  
+				
+				
+				
 				//Checks for flag, will end while if flag is detected
-				int blackPixelCheck = get_pixel(cameraView, 50, i, 3);
+				int blackPixelCheck = get_pixel(cameraView, 70, i, 3);
 				if (blackPixelCheck < 20) { blackpixels++; }
 				//std::cout<<middle[i]<<" ";
 				}
+				
+			for (int j = 0; j < 20; j++) {
+				leftRegionCheck = get_pixel(cameraView, 80 + j, 55, 3);
+				if (leftRegionCheck > 250) { leftWhitePixelValue++; }
+				rightRegionCheck = get_pixel(cameraView, 80 + j, 95, 3);
+				if (rightRegionCheck > 250) { rightWhitePixelValue++; }
+				frontRegionCheck = get_pixel(cameraView, 75, 65 + j, 3);
+				if (frontRegionCheck > 250) { frontWhitePixelValue++; }
+			}
 			error = lineMiddle(middle, blackpixels);
 		}
 		
