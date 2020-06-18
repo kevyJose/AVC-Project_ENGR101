@@ -29,7 +29,7 @@ Software Developer (writing core code and extending functionality, testing and d
 
 ### DATED PLAN AND MILESTONE GOALS
 
-**- Week Ending 5<sup>th</sup> June 2020**
+## **Week 1 (Ending 5<sup>th</sup> June 2020)**
 
 Objective for this week: **Start the project**  
 Tasks to complete this:
@@ -51,7 +51,7 @@ Challenges / conflicts of this week:
 Due this week:   
     - AVC project plan.    
     
-**- Week Ending 12<sup>th</sup> June 2020**
+## **Week 2 (Ending 12<sup>th</sup> June 2020)**
 
 Objective for this week: **Core and Completion Code.**  
 Tasks to complete this:  
@@ -87,7 +87,7 @@ Due this week:
     
                
 
-**- Week Ending 19<sup>th</sup> June 2020**  
+## **Week 3 (Ending 19<sup>th</sup> June 2020)**  
 
 Objective for this week: **Challenge Code - Coding part of project complete**  
 Tasks to complete this:
