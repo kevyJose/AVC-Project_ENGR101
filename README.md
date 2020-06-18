@@ -50,6 +50,7 @@ Challenges / conflicts of this week:
    
 Due this week:   
     - AVC project plan.
+    
 ---------------------------------------------------------------------------------------------------------------------------    
 ## **Week 2 (Ending 12<sup>th</sup> June 2020)**
 
@@ -95,10 +96,11 @@ Tasks to complete this:
 4. - [ ] Clean up all of written code to ensure it complies with given restrictions and is more accessible and readable. Add more functions and make more modular if necessary.
 5. - [ ] FULL-PROGRAM TESTING: Do a full/overall test of the program...this might happen on FINAL day of development. Make sure all functions and capabilities are working as intended. Check this code completes the course consistently within given time - make any minor tweaks and fixes where it's needed.
 7. - [ ] Final check/read-through of code to be submitted, carefully checking to ensure all works as intended before submission date.
-8. - [x] Maintain GitHub repository.   
+8. - [x] Maintain GitHub repository.
        - Including updating plan/README, updating Wiki, adding branches to MASTER code and maintaining files.
 9. - [ ] Submit final code.  
-10. - [ ] Ensure everyone is on track for remainder of project 3 (Logs and reports)  
+10. - [ ] Ensure everyone is on track for remainder of project 3 (Logs and reports)
+11. Add in the Installation Manual into the README.md 
 
 Challenges / conflicts of this week:  
     - ENGR121 test and COMP102/112 assignments to complete as well - will be a big draw of time from team members that will impact on time working on AVC project.  
@@ -107,4 +109,11 @@ Due this week:
     - Code of project (All of core, completion and challenge) to be submitted on 19<sup>th</sup> June.  
 
 ----------------------------------------------------------------------------------------------------------------------------------
+
+## **Week 4 (Ending 24th<sup>th</sup> June 2020)**
+
+### Individual Work from HERE....
+ - Update and clean up individual logs, make presentable
+ - Write brief (1 page) manual for new contractors of the company: How to manage your time
+ - Write a comprehensive report...about this software which we developed (max. 10 pgs)
 
