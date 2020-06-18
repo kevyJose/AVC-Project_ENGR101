@@ -15,7 +15,7 @@ Software Developer - Daniel
 Software Developer - Lee  
 Software Developer - Christian
 
-Role Descriptions:
+Role Descriptions:\
 Project Manager (organising team meetings, reporting regularly on progress)
 
 Software Developer (writing core code and extending functionality, testing and documentation, debugging and committing to git, writing test cases and documenting performance against milestones)
