@@ -20,9 +20,9 @@ Role Descriptions:
 * **Software Developer** (writing core code and extending functionality, testing and documentation, debugging and committing to git, writing test cases and documenting performance against milestones)
 
 Development Stages:
-* Core - following the line 
-* Completion - includes obstacles and dead-ends, 90-deg corners
-* Challenge - more of a maze structure...stay between the walls...corridor shape
+* **Core** - following the line 
+* **Completion** - includes obstacles and dead-ends, 90-deg corners
+* **Challenge** - more of a maze structure...stay between the walls...corridor shape
 
 ---------------------------------------------------------------------------------------------------------------------------------
 ### DATED PLAN AND MILESTONE GOALS
