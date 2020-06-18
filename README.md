@@ -63,18 +63,7 @@ Tasks to complete this:
 5. - [x] Maintain GitHub repository   
          - Including updating plan/README, updating Wiki and maintaining files. 
          
-*Possible Functions to be called per frame capture:  
-1.   *Kevin - Check if white line is present in frame (scan white pixels).  
-     >>Calculate the location of white pixels of the line  
-     >>Has a buffer (allows 250) for white line color if not exactly white (255,255,255).  
-2.   *Christian - Check if the white line is in the middle of the frame.  
-     >>Find the current position of the middle white pixel Calculate for the white line being in the middle of the frame.
-     >>Then make calculations to compare the middle pixel position to the centre of the array.     
-3.   *Daniel - Change the direction of robot (move a little left or right) if white pix. not in the middle of the frame.  
-     >>Adjust the speed of motors respectively.
-     >>maintain white line in centre of frame
-4.   *Lee - Reverse the robot if the line is not present until line is found again.  
-     >>Adjust the speed in a negative direction.    
+    
        
 Challenges / conflicts of this week:
 - Assignments for COMP102/112 , ENGR121 and CYBR171 may reduce time commited to AVC project, possibly impeding progress
