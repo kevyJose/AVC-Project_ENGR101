@@ -49,8 +49,9 @@ Challenges / conflicts of this week:
  
    
 Due this week:   
-    - AVC project plan.    
-    
+    - AVC project plan. 
+
+---------------------------------------------------------------------------------------------------------------------------    
 ## **Week 2 (Ending 12<sup>th</sup> June 2020)**
 
 Objective for this week: **Core and Completion Code.**  
@@ -84,9 +85,7 @@ Due this week:
     - Project progress check (Wiki discussion etc)  
     - Core code should be done (At the very least...if completion or further work is possible) by the end of this week.
     
-    
-               
-
+--------------------------------------------------------------------------------------------------------------------------------
 ## **Week 3 (Ending 19<sup>th</sup> June 2020)**  
 
 Objective for this week: **Challenge Code - Coding part of project complete**  
