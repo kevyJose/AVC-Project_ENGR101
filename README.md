@@ -45,8 +45,7 @@ Tasks to complete this:
 
 Challenges / conflicts of this week:
 - SFML issues causing problems with getting ready for project.
-- Lee facing issues with his setup/installation; waiting on him to FINISH.
- 
+- Lee facing issues with his setup/installation; waiting on him to FINISH. 
    
 Due this week:   
     - AVC project plan.
@@ -62,8 +61,6 @@ Tasks to complete this:
 4. - [x] Ensure everyone is contributing as expected, following the plan and keeping contact/guiding team to keep within schedule.    
 5. - [x] Maintain GitHub repository   
          - Including updating plan/README, updating Wiki and maintaining files. 
-         
-    
        
 Challenges / conflicts of this week:
 - Assignments for COMP102/112 , ENGR121 and CYBR171 may reduce time commited to AVC project, possibly impeding progress
