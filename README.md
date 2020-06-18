@@ -1,8 +1,5 @@
-# AVC-Project_ENGR101
-
-## AVC Plan
-
-Team Name: KDLC Boys
+# AVC Project Plan (ENGR101)
+### Team Name: KDLC Boys
 
 Team Members & contact info:  
 Kevin Jose (josekevi@myvuw.ac.nz)  
