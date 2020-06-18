@@ -1,6 +1,6 @@
 # AVC-Project_ENGR101
 
-AVC Plan
+### AVC Plan
 
 Team Name: KDLC Boys
 
