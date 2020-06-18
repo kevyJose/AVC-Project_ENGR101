@@ -27,6 +27,7 @@ Software Developer (writing core code and extending functionality, testing and d
 * Completion - includes obstacles and dead-ends, 90-deg corners
 * Challenge - more of a maze structure...stay between the walls...corridor shape
 
+---------------------------------------------------------------------------------------------------------------------------------
 ### DATED PLAN AND MILESTONE GOALS
 
 ## **Week 1 (Ending 5<sup>th</sup> June 2020)**
