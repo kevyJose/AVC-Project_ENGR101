@@ -49,8 +49,7 @@ Challenges / conflicts of this week:
  
    
 Due this week:   
-    - AVC project plan. 
-
+    - AVC project plan.
 ---------------------------------------------------------------------------------------------------------------------------    
 ## **Week 2 (Ending 12<sup>th</sup> June 2020)**
 
@@ -106,3 +105,6 @@ Challenges / conflicts of this week:
 
 Due this week:  
     - Code of project (All of core, completion and challenge) to be submitted on 19<sup>th</sup> June.  
+
+----------------------------------------------------------------------------------------------------------------------------------
+
