@@ -94,8 +94,8 @@ Tasks to complete this:
 1. [ ] Write the code to allow robot to complete challenge difficulty maze.   
 2. [ ] TESTING: Check this code completes consistently within given time - debug and fix if required to ensure this occurs.   
 3. [ ] Clean up of all written code to ensure it functions correctly and complies with given restrictions.   
-4. [ ] Ensure everyone contributes as expected within team environment, plan is followed within schedule.   
-5. [ ] Maintain GitHub repository.   
+4. [x] Ensure everyone contributes as expected within team environment, plan is followed within schedule.   
+5. [x] Maintain GitHub repository.   
        - Including updating plan/README, updating Wiki and maintaining files. 
 6. [ ] Final checks of code to be submitted, carefully checking to ensure all works as intended before submission date.  
 7. [ ] Submit final code.  
