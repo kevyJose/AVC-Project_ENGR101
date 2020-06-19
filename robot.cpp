@@ -1,6 +1,7 @@
 #include "robot.hpp"
 
 bool run = true;
+bool lastTurnUTurn = false;
 int middle[150];
 int front[150];
 int back[150];
@@ -13,6 +14,13 @@ int frontWhitePixelValue = 0;
 int leftWhitePixelValue = 0;
 int rightWhitePixelValue = 0;
 
+
+//USER INTERFACE - ASK USER FOR CORE/COMP OR CHALLENGE ROUTE
+//RUN THE SPECIFIED CODE
+//CORE/COMP FOLLOWS THE WHITE LINE
+//CHALLENGE FOLLOWS THE RED WALL ON SIDE
+
+//Sets up the user Interface menu
 int userInterface(){
 	
 	int userSelection; //Just a variable to store the selected option in
@@ -25,28 +33,26 @@ int userInterface(){
 	//std::cout<<userSelection<<" input works correctly"<<std::endl; //Line that it just printing out the variable to check the input is correct
 	return userSelection;
 	
-	}
+}
 
+//Right turn
 void right(int t){            //slowly turns right for "t" long
 		for (int i =0; i< t;i++){
 				setMotors(20,-20);
 			}
-	}
-	
+}
+
+
+//Left turn	
 void left(int t){   //slowly turns left for "t" long
 		for (int i =0; i< t;i++){
 				setMotors(-20,+20);
 			}
-	}	
+}
+		
 	
-void RightTurn90(){
-		vLeft = 248.0;
-		vRight = -88.0;
-		setMotors(vLeft, vRight);
-		setMotors(0,0);
-	}	
-	
-int howFar(){  //calculates how far the robot is from the wall
+//Calculates how far the robot is from the wall
+int howFar(){  
 	int count =0;
 	for (int i = 100;i>0;i--){
 			int p1= get_pixel(cameraView,i,75,0);  
@@ -59,9 +65,11 @@ int howFar(){  //calculates how far the robot is from the wall
 			}
 	return count;  //returns how far it is from the wall in front
 	
-}	
+}
+	
 
-bool leftWallPresent(int values1[]){    //checks if there is a red pixel on the left
+//checks if there is a red pixel on the left
+bool leftWallPresent(int values1[]){    
 	for (int i =0;i<150;i++){
 			if (values1[i] > 0){
 					return true;    //if there is red pixel: there is a wall
@@ -70,7 +78,8 @@ bool leftWallPresent(int values1[]){    //checks if there is a red pixel on the 
 }
 
 
-double redMiddel(int values1[]){   //calculates the distance from the left wall to the camera centre
+//calculates the distance from the left wall to the camera centre
+double redMiddle(int values1[]){   
 	int numreds1 = 0;             //similar to the white line middle
 	int reds1 = 0;
 	for (int i = 0;i < 150;i++){
@@ -91,7 +100,8 @@ double redMiddel(int values1[]){   //calculates the distance from the left wall 
 }
 
 
-double lineMiddle(int values[], int blackPixelCount){ //calculates the middle of white line
+//calculates the middle of white line
+double lineMiddle(int values[], int blackPixelCount){ 
 	int numwhites = 0;
 	int whites = 0;
 	for (int i = 0;i < 150;i++){
@@ -119,7 +129,8 @@ double lineMiddle(int values[], int blackPixelCount){ //calculates the middle of
 }
 
 
-double adjustMotors(double errorValue) { //Called for motor speed adjustment
+//Motor speed adjustment
+double adjustMotors(double errorValue) { 
 	//Positive calculated error val will cause bot to turn right, negative error val will cause bot to turn left
 	//This if statement forces the bot to try the rightmost exit option when coming to an intersection
 	if (frontWhitePixelValue > 0 && leftWhitePixelValue > 0 && rightWhitePixelValue == 0) {
@@ -146,6 +157,79 @@ double adjustMotors(double errorValue) { //Called for motor speed adjustment
 }
 
 
+int Challenge() {	
+	
+	int count = howFar(); //calls the howfar function for how far away the robot is from the wall
+	int error_Val = 0;
+			
+			
+	//stores all the pixels as 1 and 0 in the arrays for the front and back	
+	for (int i=0;i<150;i++){
+		int p3red = get_pixel(cameraView,90,i,0);
+		int p3blue = get_pixel(cameraView,90,i,2);
+		int p4red = get_pixel(cameraView,10,i,2); //////LEAVE IT AT TWO !!!!!!!!!!!!!!!!!!!!!!!!!!!
+		int p4blue = get_pixel(cameraView,10,i,2);  //or try to fix it jk
+		int isRed;				
+		
+		//the first if handles the white line at the start of the maze
+		//else section handles normal part of maze
+		if ((p4blue > 250) || (p3blue > 250)) {
+			adjustMotors(0);
+			
+		} else {					
+			if (p3red > 250 && p3blue < 250){
+					isRed = 1;
+				} else {isRed =0;}
+			back[i]=isRed;
+			
+			if (p4red > 250 && p4blue < 250){
+					isRed = 1;
+				} else {isRed =0;}
+			front[i]=isRed;
+		}
+	}
+
+	//stores the two distance in the variables from the redmiddle	
+	double distance1 = redMiddle(front);
+	double distance2 = redMiddle(back); 
+	error_Val = (distance1-distance2); //new error from the difference
+	std::cout<<"error val: "<<error_Val<<std::endl;
+	bool wallThere = true;                      //checks if there is a left wall from the leftwallpresent function 
+	wallThere = leftWallPresent(back);
+		
+	//If last move was a u turn this code will try and force the bot to find a wall on the left.
+	//Will keep turning left until another wall is found to follow OR a left/right turn has to be made
+	//at a wall in front which will indicate walls are going to be found.
+	//The left and right turns adjust lastTurnUTurn to ensure it only runs when the previous turn was a u-turn
+	if(count > 75 && lastTurnUTurn == true && wallThere == false) {
+		error_Val = -28; //value to turn to find left hand wall
+	}
+	
+	//turns right when the wall is less than 25 pixels away
+	if ((count < 25) && (!count == 0)){
+		if (wallThere == true){      
+		right(6);
+		lastTurnUTurn = false;
+		} else {
+			left(6); 
+			lastTurnUTurn = false; 
+		}
+	}
+	
+	//Completes the u turn if left/right turning can not result in a corrective turn.
+	if (count < 10 && count != 0) {
+			right(12); //Does a 180
+			lastTurnUTurn = true;
+	}
+	
+	std::cout<<"Count: "<<count<<std::endl;
+	std::cout<<"Left Wall: "<<wallThere<<std::endl;
+	
+	return(error_Val);
+	
+}
+	
+
 int main(){
 	if (initClientRobot() !=0){
 		std::cout<<" Error initializing robot"<<std::endl;
@@ -153,9 +237,7 @@ int main(){
 	setMotors(40,40);
 	
 	userSelection = userInterface(); //Just a variable to store the selected option in
-	
-	
-	
+		
 	//follow quit process
 	if(userSelection == 3){
 		//confirm if user wants to QUIT...
@@ -164,28 +246,22 @@ int main(){
 		
 		if(userSelection == 1){						
 			setMotors(0,0);
-			return 0;
-			
-			}
-		else if(userSelection == 2){						
+			return 0;			
+		} else if(userSelection == 2){						
 			userSelection = userInterface();
 			if (userSelection == 3){
-					setMotors(0,0);
-					return 0;
-				}
-			}		
-		}
-	
-	
-	
-	
-	int blackpixels = 0;
+				setMotors(0,0);
+				return 0;
+			}
+		}		
+	}
+				
 	SavePPMFile("i0.ppm",cameraView);
+	lastTurnUTurn = false;
 	
 	while(run){
 		takePicture();	
 		double error;
-		
 		
 		
 		//Core/Completion section - runs only if user selects the 1st option
@@ -203,8 +279,6 @@ int main(){
 				int isWhite;
 				if (pix >250){isWhite = 1;} else {isWhite = 0;}
 				middle[i] = isWhite;
-				
-				
 				
 				//Checks for flag, will end while if flag is detected
 				int blackPixelCheck = get_pixel(cameraView, 70, i, 3);
@@ -224,63 +298,22 @@ int main(){
 		}
 		
 		//Challenge section of code - runs only if the user selects 2nd option
-		else if (userSelection == 2) {	
-			int count = howFar(); //calls the howfar function for how far away the robot is from the wall
+		else if (userSelection == 2) {
 			
+			error = Challenge();	
 			
-			//stores all the pixels as 1 and 0 in the arrays for the front and back	
-			for (int i=0;i<150;i++){
-				int p3red = get_pixel(cameraView,90,i,0);
-				int p3blue = get_pixel(cameraView,90,i,2);
-				int p4red = get_pixel(cameraView,10,i,2); //////LEAVE IT AT TWO !!!!!!!!!!!!!!!!!!!!!!!!!!!
-				int p4blue = get_pixel(cameraView,10,i,2);  //or try to fix it jk
-				int isRed;
-				
-				if (p3red > 250 && p3blue < 250){
-						isRed = 1;
-					} else {isRed =0;}
-				back[i]=isRed;
-				
-				if (p4red > 250 && p4blue < 250){
-						isRed = 1;
-					} else {isRed =0;}
-				front[i]=isRed;
-			}	
 		
-		
-		//stores the two distance in the variables from the redmiddel	
-		double distance1 = redMiddel(front);
-		double distance2 = redMiddel(back); 
-		error = (distance1-distance2); //new error from the difference
-		
-		bool wallThere = true;                      //checks if there is a left wall from the leftwallpresent function 
-		wallThere = leftWallPresent(back);	
-		
-		
-		//turns right when the wall is less than 25 pixels away
-		if ((count < 25) && (!count == 0)){
-				if (wallThere = true){      
-				right(6);
-				} //else {left(6);}         /// left turn not working
-			}
-		
-		//std::cout<<error<<" ";
-		std::cout<<"Count: "<<count<<std::endl;
-		std::cout<<"Left Wall: "<<wallThere<<std::endl;
-			
-	   	//restart program if invalid input
+		//restart program if invalid input
 		} else if( (userSelection != 1) && (userSelection != 2) && (userSelection != 3) ){
-			
+						
 			userSelection = userInterface();//restart
 						
-			}
-		
+			}		
 	  
-	  //Calls for the robot's direction to be changed based on the error value found
+		//Calls for the robot's direction to be changed based on the error value found
 		adjustMotors(error);
 		
-
-	  //std::cout<<"Error: "<<error<<std::endl;  
+	  
 	} //while
 
 
