@@ -87,7 +87,7 @@ Tasks to complete this:
        - Including updating plan/README, updating Wiki, adding branches to MASTER code and maintaining files.
 9. - [ ] Submit final code.  
 10. - [ ] Ensure everyone is on track for remainder of project 3 (Logs and reports)
-11. Add in the Installation Manual into the README.md 
+11. - [ ] Add in the Installation Manual into the README.md 
 
 Challenges / conflicts of this week:  
     - ENGR121 test and COMP102/112 assignments to complete as well - will be a big draw of time from team members that will impact on time working on AVC project.  
