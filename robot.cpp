@@ -166,10 +166,12 @@ int Challenge() {
 			
 	//stores all the pixels as 1 and 0 in the arrays for the front and back	
 	for (int i=0;i<150;i++){
+		//back scanners
 		int p3red = get_pixel(cameraView,90,i,0);
 		int p3blue = get_pixel(cameraView,90,i,2);
-		int p4red = get_pixel(cameraView,10,i,2); //////LEAVE IT AT TWO !!!!!!!!!!!!!!!!!!!!!!!!!!!
-		int p4blue = get_pixel(cameraView,10,i,2);  //or try to fix it jk
+		//front scanners
+		int p4red = get_pixel(cameraView,10,i,2); 
+		int p4blue = get_pixel(cameraView,10,i,2);  
 		int isRed;				
 		
 		//the first if handles the white line at the start of the maze
