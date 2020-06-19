@@ -1,3 +1,6 @@
+# Installation MANUAL
+here............
+
 # AVC Project Plan (ENGR101)
 ### Team Name: KDLC Boys
 
