@@ -45,7 +45,7 @@ NOTE: you should already have MingW installed before you begin the following STE
 <br />
 
 
-# AVC Project Plan (ENGR101)
+# AVC Project Plan
 ### Team Name: KDLC Boys
 
 Team Members & contact info:  
