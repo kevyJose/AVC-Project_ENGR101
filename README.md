@@ -1,5 +1,48 @@
-# Installation MANUAL
-here............
+# Installation MANUAL for Windows 10 (mingW and Geany)
+
+NOTE: you should already have MingW installed before you begin the following STEPS:
+
+**INSTALLING:**
+- go to SFML website: www.sfml-dev.org/download/sfml/2.5.1/
+
+- download the "MinGW Builds 7.3.0" and "GCC 7.3.0 MinGW (SEH)" files from the above website. Choose 32bit or 64bit version files, depending on your PC
+		
+- download the 'AVC_Win10.zip' folder from attachments on the ENGR101 project website
+
+- extract the "GCC 7.3.0 MinGW (SEH)" Zip folder to the root of C drive. Rename the extracted folder to 'SFML'
+
+- extract the 'AVC_Win10' folder into the folder where your project is stored
+
+- open up the 'robot.cpp' file which is in the 'AVC_Win10" folder, with Geany
+
+- Once you have the cpp file in geany, click the drop-down menu next to the 'build' button, then click 'set build commands'.
+
+- A small window will open up...so then change the 'Independent commands' by adding "mingw32-" to the front of the three fields.
+ 
+- then click "OK"!
+
+
+**TESTING ROBOT PROGRAM:**
+- open up the "sever.exe" application, leave the console windows open!
+
+- then return back to the robot.cpp file in Geany. Click the build drop-down...then click "Make all". Wait for the message "compilation finished successfully"
+
+- then click "execute"
+
+- in the server console...you should see the robot begin moving.
+
+- If robot moves after execution...then SETUP is successful
+
+
+**TROUBLESHOOTING (try following STEPS if SETUP unsuccessful):**
+- go to the "AVC_robot" folder and open up the "makefile" document. In lines 4 and 6...remove the indenting and then press "Tab" for each line
+
+- check your current environment variables
+
+- check that your 'MingW' program and 'SFML' folder are matching. Are they both 32bit or are they both 64bit?
+
+- Make sure you have the latest build of MingW (version 7.3.0)
+
 
 # AVC Project Plan (ENGR101)
 ### Team Name: KDLC Boys
