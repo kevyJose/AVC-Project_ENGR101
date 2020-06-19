@@ -284,5 +284,4 @@ int main(){
 	} //while
 
 
-} // main 
-//1
+} // main
