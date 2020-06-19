@@ -75,7 +75,7 @@ Due this week:
 Objective for this week: **Challenge Code - Coding part of project complete**  
 Tasks to complete this:
 1. - [x] Ensure everyone contributes as expected within team environment, plan is followed within schedule. 
-2. - [ ] Write the code to allow robot to complete challenge difficulty maze. 
+2. - [x] Write the code to allow robot to complete challenge difficulty maze. 
 3. - [x] Iterative TESTING: Make checkpoints and keep testing code as devleopment is made. Ensure that current code is functioning as it should. Do the necessary debugging and fixes as it is needed. 
 4. - [ ] Clean up all of written code to ensure it complies with given restrictions and is more accessible and readable. Add more functions and make more modular if necessary.
 5. - [ ] FULL-PROGRAM TESTING: Do a full/overall test of the program...this might happen on FINAL day of development. Make sure all functions and capabilities are working as intended. Check this code completes the course consistently within given time - make any minor tweaks and fixes where it's needed.
