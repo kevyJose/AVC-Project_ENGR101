@@ -1,19 +1,20 @@
 #include "robot.hpp"
 
+int userSelection;
 bool run = true;
 bool lastTurnUTurn = false;
+
+//arrays
 int middle[150];
 int front[150];
 int back[150];
+//left/right wheel speeds
 double vLeft = 0.0;
 double vRight = 0.0;
-int userSelection;
-
 //string corneringPath;		 
 int frontWhitePixelValue = 0;
 int leftWhitePixelValue = 0;
 int rightWhitePixelValue = 0;
-
 
 //USER INTERFACE - ASK USER FOR CORE/COMP OR CHALLENGE ROUTE
 //RUN THE SPECIFIED CODE
