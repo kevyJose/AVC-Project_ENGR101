@@ -41,7 +41,7 @@ NOTE: you should already have MingW installed before you begin the following STE
 
 - check that your 'MingW' program and 'SFML' folder are matching. Are they both 32bit or are they both 64bit?
 
-- Make sure you have the latest build of MingW (version 7.3.0)
+- Make sure you have the latest build of MingW (version 7.3.0)</br>
 
 
 # AVC Project Plan (ENGR101)
