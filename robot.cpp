@@ -156,7 +156,7 @@ int main(){
 	
 	
 	
-			//follow quit process
+	//follow quit process
 	if(userSelection == 3){
 		//confirm if user wants to QUIT...
 		std::cout<<">> ARE YOU SURE YOU WANT TO QUIT? (1 to quit / 2 to restart)"<<std::endl;
@@ -267,7 +267,8 @@ int main(){
 		//std::cout<<error<<" ";
 		std::cout<<"Count: "<<count<<std::endl;
 		std::cout<<"Left Wall: "<<wallThere<<std::endl;
-		   //restart program if invalid input
+			
+	   	//restart program if invalid input
 		} else if( (userSelection != 1) && (userSelection != 2) && (userSelection != 3) ){
 			
 			userSelection = userInterface();//restart
