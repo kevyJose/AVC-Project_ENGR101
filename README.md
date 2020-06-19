@@ -126,11 +126,11 @@ Tasks to complete this:
 3. - [x] Iterative TESTING: Make checkpoints and keep testing code as devleopment is made. Ensure that current code is functioning as it should. Do the necessary debugging and fixes as it is needed. 
 4. - [x] Clean up all of written code to ensure it complies with given restrictions and is more accessible and readable. Add more functions and make more modular if necessary.
 5. - [x] FULL-PROGRAM TESTING: Do a full/overall test of the program...this might happen on FINAL day of development. Make sure all functions and capabilities are working as intended. Check this code completes the course consistently within given time - make any minor tweaks and fixes where it's needed.
-7. - [ ] Final check/read-through of code to be submitted, carefully checking to ensure all works as intended before submission date.
+7. - [x] Final check/read-through of code to be submitted, carefully checking to ensure all works as intended before submission date.
 8. - [x] Maintain GitHub repository.
        - Including updating plan/README, updating Wiki, adding branches to MASTER code and maintaining files.
-9. - [ ] Submit final code.  
-10. - [ ] Ensure everyone is on track for remainder of project 3 (Logs and reports)
+9. - [x] Submit final code.  
+10. - [x] Ensure everyone is on track for remainder of project 3 (Logs and reports)
 11. - [x] Add in the Installation Manual into the README.md 
 
 Challenges / conflicts of this week:  
