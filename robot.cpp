@@ -177,12 +177,13 @@ int Challenge() {
 		if ((p4blue > 250) || (p3blue > 250)) {
 			adjustMotors(0);
 			
-		} else {					
+		} else {
+			//add to back array
 			if (p3red > 250 && p3blue < 250){
 					isRed = 1;
 				} else {isRed =0;}
-			back[i]=isRed;
-			
+			back[i]=isRed;	
+			//add to front array
 			if (p4red > 250 && p4blue < 250){
 					isRed = 1;
 				} else {isRed =0;}
