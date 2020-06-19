@@ -13,6 +13,12 @@ int frontWhitePixelValue = 0;
 int leftWhitePixelValue = 0;
 int rightWhitePixelValue = 0;
 
+
+//USER INTERFACE - ASK USER FOR CORE/COMP OR CHALLENGE ROUTE
+//RUN THE SPECIFIED CODE
+//CORE/COMP FOLLOWS THE WHITE LINE
+//CHALLENGE FOLLOWS THE RED WALL ON SIDE
+
 int userInterface(){
 	
 	int userSelection; //Just a variable to store the selected option in
@@ -39,6 +45,8 @@ void left(int t){   //slowly turns left for "t" long
 			}
 	}	
 	
+	
+	//Not used - can be removed?
 void RightTurn90(){
 		vLeft = 248.0;
 		vRight = -88.0;
@@ -146,6 +154,9 @@ double adjustMotors(double errorValue) { //Called for motor speed adjustment
 }
 
 
+//Currently 60 operators long as defined by the presence of semicolons ";"
+//May look longer but when considering that as the counting factor it is 60 long.
+
 int main(){
 	if (initClientRobot() !=0){
 		std::cout<<" Error initializing robot"<<std::endl;
@@ -153,9 +164,7 @@ int main(){
 	setMotors(40,40);
 	
 	userSelection = userInterface(); //Just a variable to store the selected option in
-	
-	
-	
+		
 	//follow quit process
 	if(userSelection == 3){
 		//confirm if user wants to QUIT...
@@ -164,23 +173,18 @@ int main(){
 		
 		if(userSelection == 1){						
 			setMotors(0,0);
-			return 0;
-			
-			}
-		else if(userSelection == 2){						
+			return 0;			
+		} else if(userSelection == 2){						
 			userSelection = userInterface();
 			if (userSelection == 3){
-					setMotors(0,0);
-					return 0;
-				}
-			}		
-		}
-	
-	
-	
-	
-	int blackpixels = 0;
+				setMotors(0,0);
+				return 0;
+			}
+		}		
+	}
+				
 	SavePPMFile("i0.ppm",cameraView);
+	bool lastTurnUTurn = false;
 	
 	while(run){
 		takePicture();	
@@ -236,15 +240,23 @@ int main(){
 				int p4blue = get_pixel(cameraView,10,i,2);  //or try to fix it jk
 				int isRed;
 				
-				if (p3red > 250 && p3blue < 250){
-						isRed = 1;
-					} else {isRed =0;}
-				back[i]=isRed;
 				
-				if (p4red > 250 && p4blue < 250){
-						isRed = 1;
-					} else {isRed =0;}
-				front[i]=isRed;
+				//the first if handles the white line at the start of the maze
+				//else section handles normal part of maze
+				if ((p4blue > 250) || (p3blue > 250)) {
+					adjustMotors(0);
+					
+				} else {					
+					if (p3red > 250 && p3blue < 250){
+							isRed = 1;
+						} else {isRed =0;}
+					back[i]=isRed;
+					
+					if (p4red > 250 && p4blue < 250){
+							isRed = 1;
+						} else {isRed =0;}
+					front[i]=isRed;
+				}
 			}	
 		
 		
@@ -252,23 +264,38 @@ int main(){
 		double distance1 = redMiddel(front);
 		double distance2 = redMiddel(back); 
 		error = (distance1-distance2); //new error from the difference
-		
+		std::cout<<"error val: "<<error<<std::endl;
 		bool wallThere = true;                      //checks if there is a left wall from the leftwallpresent function 
-		wallThere = leftWallPresent(back);	
-		
-		
+		wallThere = leftWallPresent(back);
+			
+		//If last move was a u turn this code will try and force the bot to find a wall on the left.
+		//Will keep turning left until another wall is found to follow OR a left/right turn has to be made
+		//at a wall in front which will indicate walls are going to be found.
+		//The left and right turns adjust lastTurnUTurn to ensure it only runs when the previous turn was a u-turn
+		if(count > 75 && lastTurnUTurn == true && wallThere == false) {
+			error = -28; //value to turn to find left hand wall
+		}
 		//turns right when the wall is less than 25 pixels away
 		if ((count < 25) && (!count == 0)){
-				if (wallThere = true){      
+				if (wallThere == true){      
 				right(6);
-				} //else {left(6);}         /// left turn not working
+				lastTurnUTurn = false;
+				} else {
+					left(6); 
+					lastTurnUTurn = false; 
+				}
 			}
+		//Completes the u turn if left/right turning can not result in a corrective turn.
+		if (count < 10 && count != 0) {
+				right(12); //Does a 180
+				lastTurnUTurn = true;
+		} 
+		
 		
 		//std::cout<<error<<" ";
 		std::cout<<"Count: "<<count<<std::endl;
 		std::cout<<"Left Wall: "<<wallThere<<std::endl;
-			
-	   	//restart program if invalid input
+		   //restart program if invalid input
 		} else if( (userSelection != 1) && (userSelection != 2) && (userSelection != 3) ){
 			
 			userSelection = userInterface();//restart
@@ -284,4 +311,4 @@ int main(){
 	} //while
 
 
-} // main
+} // main 
