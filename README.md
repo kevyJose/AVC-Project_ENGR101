@@ -1,47 +1,88 @@
-# Installation MANUAL for Windows 10 (mingW and Geany)
+# Installation MANUAL for Windows 10 (mingW and Geany)  
 
-NOTE: you should already have MingW installed before you begin the following STEPS:
 
-**INSTALLING:**
-- go to SFML website: www.sfml-dev.org/download/sfml/2.5.1/
+NOTE: ideally you should already have MingW and Geany installed before you begin the following STEPS:  
+If you do not have MinGW installed follow the steps entitled **Getting MinGW:**, otherwise follow **Updating MinGW:** where there are instrictions for updating your currently installed version of MinGW to the correct corresponding version for the SFML build used.   
+If you do not have Geany installed download and follow the steps from https://www.geany.org/
 
-- download the "MinGW Builds 7.3.0" and "GCC 7.3.0 MinGW (SEH)" files from the above website. Choose 32bit or 64bit version files, depending on your PC
-		
-- download the 'AVC_Win10.zip' folder from attachments on the ENGR101 project website
+**Getting MinGW:**  
 
-- extract the "GCC 7.3.0 MinGW (SEH)" Zip folder to the root of C drive. Rename the extracted folder to 'SFML'
+- Follow the link to the download page on the SFML website: www.sfml-dev.org/download/sfml/2.5.1/  
 
-- extract the 'AVC_Win10' folder into the folder where your project is stored
+- Download the corresponding version of "MinGW Builds 7.3.0" as what will be your chosen SFML install. For this program it is highly recommended (and assumed) that you will insall "MinGW Builds 7.3.0 (64-bit)" - This is the version that is verified to work correctly and should be used with "GCC 7.3.0 MinGW (SEH) - 64-bit" . Do not mix and match these versions - you should use this specific pair.
 
-- open up the 'robot.cpp' file which is in the 'AVC_Win10" folder, with Geany
+- Create a folder in your C drive entitled "MinGW" - the directory should be C:\MinGW  
+
+- Extract (Ideally using 7Zip or a similar program) the file downloaded through selecting "GCC 7.3.0 MinGW (SEH) - 64-bit" wherever downloaded. This will result in a folder named "mingw64" being created. The files within this folder should then be moved into the C:\MinGW folder - There should be no intermediary folders meaning that opening the MinGW folder in the C drive will lead directly to the folder containing files "bin" and "lib" for example. To ensure that this is correct the directory within the bin folder should be C:\MinGW\bin if following along exactly    
+
+- Press your windows button (or just open windows search) and type in / search for environment variables - click on and open the option "Edit the system environment variables"  
+
+- From there select the "Environment Variables..." button then select the variable entitled "Path" and press the "Edit" button underneath the box entitled "User variables for \[your username here\]"  
+
+- Press "New" and paste in the directory to the "bin" folder in the MinGW C drive folder - It should be along the lines of C:\MinGW\bin if installed in the directed place. To get this yourself open the bin folder and click into the file path that shows the current folder and then copy/paste when selected "New"  
+
+- Restart your PC to ensure changes are applied and move onto the installation step. (It may be a good idea to check that the compiler is working correctly by attempting to compile, build and run a sample file (perhaps a simple hello world program))  
+
+**Updating MinGW:**  
+
+- Follow the link to the download page on the SFML website: www.sfml-dev.org/download/sfml/2.5.1/  
+
+- Download the corresponding version of "MinGW Builds 7.3.0" as what will be your chosen SFML install. For this program it is highly recommended (and assumed) that you will insall "MinGW Builds 7.3.0 (64-bit)" - This is the version that is verified to work correctly and should be used with "GCC 7.3.0 MinGW (SEH) - 64-bit" . Do not mix and match these versions - you should use this specific pair.  
+
+- Extract the file downloaded through selecting (using 7Zip or similar) "MinGW Builds 7.3.0 (64-bit)", replace the contents of your C:\MinGW folder with everything in this new folder. *If you do not have this folder in your C drive follow **Getting MinGW** instead* - The contents of this install should replace everything in the currently existing folder so you should delete all current contents and then move the new contents inside the extracted "mingw64" folder into C:\MinGW  
+
+- This should update your install of MinGW (if it has been set up correctly before with changing environment variables)  
+
+**INSTALLING:**  
+Before being able to run robot.cpp and have the robot complete the maze you must first install the correct versions of the minGW c++ compiler and the corresponding SFML build.  
+
+- Follow this link to the download page on the SFML website: www.sfml-dev.org/download/sfml/2.5.1/  
+
+- Download the "MinGW Builds 7.3.0" and "GCC 7.3.0 MinGW (SEH)" files from the above website. Choose 32bit or 64bit version files, depending on your PC. Make sure these versions selected match and we highly recomment the 64 bit option. If you are to follow this manual as intended install "MinGW Builds 7.3.0 (64-bit)" and "GCC 7.3.0 MinGW (SEH) - 64-bit"
+  - ***follow the instuctions around getting or updating MinGW to correctly configure your MinGW install***  
+
+- Extract the "GCC 7.3.0 MinGW (SEH)" Zip folder to your C drive. Rename the extracted folder to 'SFML' - This should provide you with a directory location of C:\SFML - Ensure that the folders and files of the SFML build (i.e. bin, doc) are within C:\SFML and not nested in another folder (i.e. ensure directory to bin folder is C:\SFML\bin)  
+
+- Download the "AVC_Win10_KDLCBoys.zip" folder from this repository if you haven't got it already  
+
+- Extract the 'AVC_Win10_KDLCBoys.zip' folder to the destination you would like it to be stored  
+
+- Go to C:\SFML\bin and copy all the .dll files (There will be 11) in this folder  
+
+- Paste these files into the "AVC_robot" and "AVC_server" folders - selecting replace current files in destination folder to ensure the .dll files match  
+
+- Open up the 'robot.cpp' file which is in the 'AVC_robot" folder, with Geany (This should be the correct updated version, however it may be a good idea to copy the code from opening "robot.cpp" from the GitHub repository directly and copy in this code to robot.cpp, save then carry on)  
 
 - Once you have the cpp file in geany, click the drop-down menu next to the 'build' button, then click 'set build commands'.
 
-- A small window will open up...so then change the 'Independent commands' by adding "mingw32-" to the front of the three fields.
+- A small window will open up...so then change the 'Independent commands' by adding "mingw32-" to the front of the three fields which should result in "mingw32-make" for Independant commands 1 and 2, and "mingw32-make %e.o" for command 3.
  
 - then click "OK"!
 
+- Open the "makefile" in both "AVC_robot" and "AVC_server" folders with Geany. ensure that the spacing in line 6 and 8 are tabbed indented. To do this remove the space on these lines and then readd it by pressing your TAB key **ONCE** - It would also be ideal to check that the directory on line 1 is correct - meaning that the line "DIR = C:\\SFML" should be pointing to where your SFML folder is on your C drive.  
+
 
 **TESTING ROBOT PROGRAM:**
-- open up the "sever.exe" application, leave the console windows open!
+- Open "server3.cpp" from the AVC_server folder with geany then click "Compile". Once this is done press "Make all" from the drop down menu next to "Build" and then once this is complete press "Execute" to run the server (Alternatively select server3.exe from the AVC_server folder when "Make all" completes.) Leave the console open.
 
-- then return back to the robot.cpp file in Geany. Click the build drop-down...then click "Make all". Wait for the message "compilation finished successfully"
+- Return back to the robot.cpp file in Geany. Click the build drop-down...then click "Make all". Wait for the message "compilation finished successfully"
 
-- then click "execute"
+- Then click "Execute"
 
-- in the server console...you should see the robot begin moving.
+- Select which map type is being tried by entering "1" for Core and Completion or "2" for Challenge in the server console. The robot should then begin moving.
 
 - If robot moves after execution...then SETUP is successful
 
+- To change the map being tested open "config.txt" in the AVC_server folder and change where it says "challenge.txt" after the comma to be "core.txt" for the Core map, "completion.txt" for the Completion map or "challenge.txt" for the Challenge map.
 
 **TROUBLESHOOTING (try following STEPS if SETUP unsuccessful):**
-- go to the "AVC_robot" folder and open up the "makefile" document. In lines 4 and 6...remove the indenting and then press "Tab" for each line
+- go to the "AVC_robot" folder and open up the "makefile" document. In lines 6 and 8...remove the indenting and then press "Tab" for each line
 
-- check your current environment variables
+- check your current environment variables are correct - follow this process in **Getting MinGW**  
 
 - check that your 'MingW' program and 'SFML' folder are matching. Are they both 32bit or are they both 64bit?
 
-- Make sure you have the latest build of MingW (version 7.3.0) 
+- Make sure you have the correct build of MingW for the SFML build we are using (MinGW version 7.3.0) 
 <br />
 
 
