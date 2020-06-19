@@ -6,6 +6,26 @@ int front[150];
 int back[150];
 double vLeft = 0.0;
 double vRight = 0.0;
+int userSelection;
+
+//string corneringPath;		 
+int frontWhitePixelValue = 0;
+int leftWhitePixelValue = 0;
+int rightWhitePixelValue = 0;
+
+int userInterface(){
+	
+	int userSelection; //Just a variable to store the selected option in
+	std::cout<<">> "<<std::endl;
+	std::cout<<">> Please enter maze difficulty/type"<<std::endl;
+	std::cout<<">> Enter 1 for CORE and COMPLETION maps"<<std::endl;
+	std::cout<<">> Enter 2 for CHALLENGE map"<<std::endl;
+	std::cout<<">> Enter 3 to QUIT"<<std::endl;
+	std::cin>>userSelection; //cin (console in or something like that)- input that stores the result in the userSelection variable
+	//std::cout<<userSelection<<" input works correctly"<<std::endl; //Line that it just printing out the variable to check the input is correct
+	return userSelection;
+	
+	}
 
 void right(int t){            //slowly turns right for "t" long
 		for (int i =0; i< t;i++){
@@ -101,11 +121,27 @@ double lineMiddle(int values[], int blackPixelCount){ //calculates the middle of
 
 double adjustMotors(double errorValue) { //Called for motor speed adjustment
 	//Positive calculated error val will cause bot to turn right, negative error val will cause bot to turn left
-	//std::cout<<errorValue;	
-	vLeft = 20 + (0.1 * errorValue);
-	vRight = 20 - (0.1 * errorValue);
-	setMotors(vLeft,vRight); 
-	std::cout<<"Left: "<<vLeft<<" Right: "<<vRight<<std::endl;
+	//This if statement forces the bot to try the rightmost exit option when coming to an intersection
+	if (frontWhitePixelValue > 0 && leftWhitePixelValue > 0 && rightWhitePixelValue == 0) {
+		//std::cout<<"forced straightening occuring";
+		vLeft = 20;
+		vRight = 20;
+	} else {
+	
+		//std::cout<<errorValue;	
+		//1 is for coore and completion
+		//2 is for challenge
+		if (userSelection == 1){
+					vLeft = 20 + (0.3 * errorValue);            //different error values for comp and challenge
+					vRight = 20 - (0.3 * errorValue);
+					setMotors(vLeft,vRight);
+			}
+		if (userSelection == 2){
+					vLeft = 20 + (0.1 * errorValue);
+					vRight = 20 - (0.1 * errorValue);
+					setMotors(vLeft,vRight);
+			}	
+	}
 	return 0;
 }
 
@@ -116,13 +152,31 @@ int main(){
 	}
 	setMotors(40,40);
 	
-	int userSelection; //Just a variable to store the selected option in
-	//This needs to be improved by actually ending the program properly if a differing input (e.g. 3) is choses (essentially providing a quit option)
-	std::cout<<">> Please enter maze difficulty/type"<<std::endl;
-	std::cout<<">> Enter 1 for CORE and COMPLETION maps"<<std::endl;
-	std::cout<<">> Enter 2 for CHALLENGE map"<<std::endl;
-	std::cin>>userSelection; //cin (console in or something like that)- input that stores the result in the userSelection variable
-	//std::cout<<userSelection<<" input works correctly"<<std::endl; //Line that it just printing out the variable to check the input is correct
+	userSelection = userInterface(); //Just a variable to store the selected option in
+	
+	
+	
+			//follow quit process
+	if(userSelection == 3){
+		//confirm if user wants to QUIT...
+		std::cout<<">> ARE YOU SURE YOU WANT TO QUIT? (1 to quit / 2 to restart)"<<std::endl;
+		std::cin>>userSelection;
+		
+		if(userSelection == 1){						
+			setMotors(0,0);
+			return 0;
+			
+			}
+		else if(userSelection == 2){						
+			userSelection = userInterface();
+			if (userSelection == 3){
+					setMotors(0,0);
+					return 0;
+				}
+			}		
+		}
+	
+	
 	
 	
 	int blackpixels = 0;
@@ -132,19 +186,40 @@ int main(){
 		takePicture();	
 		double error;
 		
+		
+		
 		//Core/Completion section - runs only if user selects the 1st option
 		if(userSelection == 1) { 
-			for (int i =0; i<150;i++){
+			int frontRegionCheck;
+			int leftRegionCheck;
+			int rightRegionCheck;
+			frontWhitePixelValue = 0;
+			leftWhitePixelValue = 0;
+			rightWhitePixelValue = 0;
+			int blackpixels = 0;
+			
+			for (int i = 0; i<150;i++){
 				int pix = get_pixel(cameraView,90,i,3);
 				int isWhite;
 				if (pix >250){isWhite = 1;} else {isWhite = 0;}
 				middle[i] = isWhite;
-		  
+				
+				
+				
 				//Checks for flag, will end while if flag is detected
-				int blackPixelCheck = get_pixel(cameraView, 50, i, 3);
+				int blackPixelCheck = get_pixel(cameraView, 70, i, 3);
 				if (blackPixelCheck < 20) { blackpixels++; }
 				//std::cout<<middle[i]<<" ";
 				}
+				
+			for (int j = 0; j < 20; j++) {
+				leftRegionCheck = get_pixel(cameraView, 80 + j, 55, 3);
+				if (leftRegionCheck > 250) { leftWhitePixelValue++; }
+				rightRegionCheck = get_pixel(cameraView, 80 + j, 95, 3);
+				if (rightRegionCheck > 250) { rightWhitePixelValue++; }
+				frontRegionCheck = get_pixel(cameraView, 75, 65 + j, 3);
+				if (frontRegionCheck > 250) { frontWhitePixelValue++; }
+			}
 			error = lineMiddle(middle, blackpixels);
 		}
 		
@@ -192,7 +267,13 @@ int main(){
 		//std::cout<<error<<" ";
 		std::cout<<"Count: "<<count<<std::endl;
 		std::cout<<"Left Wall: "<<wallThere<<std::endl;
-		}
+		   //restart program if invalid input
+		} else if( (userSelection != 1) && (userSelection != 2) && (userSelection != 3) ){
+			
+			userSelection = userInterface();//restart
+						
+			}
+		
 	  
 	  //Calls for the robot's direction to be changed based on the error value found
 		adjustMotors(error);
@@ -203,4 +284,3 @@ int main(){
 
 
 } // main 
-
